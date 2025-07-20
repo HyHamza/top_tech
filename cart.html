@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cart - Top Tech</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      .cart-item {
+        border-bottom: 1px solid #ddd;
+        padding: 1rem 0;
+      }
+      .cart-summary {
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+      .quantity-btn {
+        cursor: pointer;
+        font-size: 1.2rem;
+        padding: 0 10px;
+      }
+      .payment-gateways img {
+        max-width: 80px;
+        margin: 5px;
+        border: 1px solid #eee;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body onload="loadCartItems()">
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="home.html">
+          <i class="fas fa-bolt"></i> Top Tech
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item ms-lg-3 position-relative">
+              <a
+                class="btn btn-outline-secondary position-relative"
+                href="cart.html"
+              >
+                <i class="fas fa-shopping-cart"></i>
+                <span
+                  id="cartCount"
+                  class="cart-count badge bg-danger position-absolute top-0 start-100 translate-middle"
+                  >0</span
+                >
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5 pt-5">
+      <h1 class="mb-4">Shopping Cart</h1>
+      <div id="cart-items"></div>
+
+      <div class="mt-4">
+        <p class="cart-summary">Total: $<span id="cart-total">0</span></p>
+        <div class="payment-gateways my-4">
+          <h5>Accepted Payment Methods:</h5>
+          <img src="images/visa.webp" alt="Visa" />
+          <img src="images/mastercard.jpg" alt="MasterCard" />
+          <img src="images/paypal.jpg" alt="PayPal" />
+          <!-- Add more payment gateway images as needed -->
+        </div>
+        <button id="continueShoppingBtn" class="btn btn-secondary">
+          <a href="home.html">Continue Shopping</a>
+        </button>
+        <button id="checkoutBtn" class="btn btn-primary">Checkout</button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+      document
+        .getElementById("checkout-btn")
+        .addEventListener("click", checkout);
+    </script>
+  </body>
+</html>

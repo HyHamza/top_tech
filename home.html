@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Tech - Your Tech Destination</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="login.html">
+          <i class="fas fa-bolt"></i> Top Tech
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#hero"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#products">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#categories">Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-3">
+              <a class="btn btn-primary" href="#products">Shop Now</a>
+            </li>
+            <li class="nav-item ms-lg-3 position-relative">
+              <a
+                class="btn btn-outline-secondary position-relative"
+                href="cart.html"
+              >
+                <i class="fas fa-shopping-cart"></i>
+                <span
+                  id="cartCount"
+                  class="cart-count badge bg-danger position-absolute top-0 start-100 translate-middle"
+                  >0</span
+                >
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="hero">
+      <div class="container">
+        <h1>Discover the Future of Tech</h1>
+        <p>
+          Explore our curated selection of the latest and greatest electronic
+          gadgets, from Mobile Phones to smart home devices.
+        </p>
+        <a href="#products" class="btn btn-primary btn-lg">Explore Products</a>
+      </div>
+    </section>
+
+    <section id="products" class="section-padding">
+      <div class="container">
+        <h2 class="section-heading">Featured Products</h2>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/iphone.avif"
+                class="card-img-top"
+                alt="Smartphone"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">iPhone 14</h5>
+                  <p class="card-text">
+                    Latest generation smartphone with AI camera and stunning
+                    display.
+                  </p>
+                  <p class="price">$999</p>
+                </div>
+                <a
+                  href="phones.html"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="iPhone 14"
+                  data-price="999"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/laptop pro.avif"
+                class="card-img-top"
+                alt="Laptop"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">Laptop Pro</h5>
+                  <p class="card-text">
+                    Powerful and lightweight laptop for professionals on the go.
+                  </p>
+                  <p class="price">$1499</p>
+                </div>
+                <a
+                  href="laptops.html"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="Laptop Pro"
+                  data-price="1499"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/smartwatch.avif"
+                class="card-img-top"
+                alt="Smartwatch"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">Smartwatch S</h5>
+                  <p class="card-text">
+                    Track your fitness and stay connected with this sleek
+                    smartwatch.
+                  </p>
+                  <p class="price">$299</p>
+                </div>
+                <a
+                  href="wearables.html"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="Smartwatch S"
+                  data-price="299"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/headphones z.avif"
+                class="card-img-top"
+                alt="Headphones"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">Headphones Z</h5>
+                  <p class="card-text">
+                    Immersive sound quality with noise-cancelling technology.
+                  </p>
+                  <p class="price">$199</p>
+                </div>
+                <a
+                  href="audio.html"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="Headphones Z"
+                  data-price="199"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/camera alpha.avif"
+                class="card-img-top"
+                alt="Camera"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">Camera Alpha</h5>
+                  <p class="card-text">
+                    Professional mirrorless camera with outstanding image
+                    quality.
+                  </p>
+                  <p class="price">$1999</p>
+                </div>
+                <a
+                  href="accessories.html"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="Camera Alpha"
+                  data-price="1999"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img src="images/mouse" class="card-img-top" alt="Gaming Mouse" />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">Gaming Mouse X1</h5>
+                  <p class="card-text">
+                    High-precision gaming mouse with customizable RGB lighting.
+                  </p>
+                  <p class="price">$79</p>
+                </div>
+                <a
+                  href="accessories.html"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="Gaming Mouse X1"
+                  data-price="79"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/4k monitor.avif"
+                class="card-img-top"
+                alt="Monitor"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">UltraSharp 4K Monitor</h5>
+                  <p class="card-text">
+                    Stunning 27-inch 4K monitor for creative professionals.
+                  </p>
+                  <p class="price">$599</p>
+                </div>
+                <a
+                  href="laptops.html"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="UltraSharp 4K Monitor"
+                  data-price="599"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/vr headset.avif"
+                class="card-img-top"
+                alt="VR Headset"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">Immersive VR Headset</h5>
+                  <p class="card-text">
+                    Step into virtual worlds with this comfortable VR headset.
+                  </p>
+                  <p class="price">$399</p>
+                </div>
+                <a
+                  href="audio.html"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="Immersive VR Headset"
+                  data-price="399"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/paperlite e reader.avif"
+                class="card-img-top"
+                alt="E-Reader"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">PaperLite E-Reader</h5>
+                  <p class="card-text">
+                    Read comfortably anywhere with this glare-free e-reader.
+                  </p>
+                  <p class="price">$129</p>
+                </div>
+                <a
+                  href="accessories.html"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="PaperLite E-Reader"
+                  data-price="129"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/portable bt speaker.avif"
+                class="card-img-top"
+                alt="Bluetooth Speaker"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">Portable BT Speaker</h5>
+                  <p class="card-text">
+                    Waterproof Bluetooth speaker with rich bass sound.
+                  </p>
+                  <p class="price">$99</p>
+                </div>
+                <a
+                  href="audio.html"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="Portable BT Speaker"
+                  data-price="99"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/prohd webcam.avif"
+                class="card-img-top"
+                alt="Webcam"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">Pro HD Webcam</h5>
+                  <p class="card-text">
+                    Crystal clear video calls with this 1080p HD webcam.
+                  </p>
+                  <p class="price">$69</p>
+                </div>
+                <a
+                  href="accessories.html"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="Pro HD Webcam"
+                  data-price="69"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/external ss.avif"
+                class="card-img-top"
+                alt="External SSD"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">1TB External SSD</h5>
+                  <p class="card-text">
+                    Fast and reliable portable storage for your files.
+                  </p>
+                  <p class="price">$149</p>
+                </div>
+                <a
+                  href="accessories.html"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="1TB External SSD"
+                  data-price="149"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="new-arrivals" class="section-padding">
+      <div class="container">
+        <h2 class="section-heading">New Arrivals</h2>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/tablet air.avif"
+                class="card-img-top"
+                alt="Tablet"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">Tablet Air</h5>
+                  <p class="card-text">
+                    Ultra-thin tablet perfect for creativity and entertainment.
+                  </p>
+                  <p class="price">$599</p>
+                </div>
+                <a
+                  href="phones.html"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="Tablet Air"
+                  data-price="599"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/smart speaker.avif"
+                class="card-img-top"
+                alt="Smart Speaker"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">Smart Speaker Mini</h5>
+                  <p class="card-text">
+                    Compact smart speaker with powerful sound and voice
+                    assistant.
+                  </p>
+                  <p class="price">$49</p>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="Smart Speaker Mini"
+                  data-price="49"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/console.avif"
+                class="card-img-top"
+                alt="Gaming Console"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">NextGen Console</h5>
+                  <p class="card-text">
+                    Experience next-level gaming with stunning graphics and
+                    speed.
+                  </p>
+                  <p class="price">$499</p>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="NextGen Console"
+                  data-price="499"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img src="images/drone.avif" class="card-img-top" alt="Drone" />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">Camera Drone Pro</h5>
+                  <p class="card-text">
+                    Capture breathtaking aerial shots with this professional
+                    drone.
+                  </p>
+                  <p class="price">$1199</p>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="Camera Drone Pro"
+                  data-price="1199"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/thermostat.avif"
+                class="card-img-top"
+                alt="Smart Thermostat"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">Smart Thermostat E</h5>
+                  <p class="card-text">
+                    Save energy and control your home temperature remotely.
+                  </p>
+                  <p class="price">$169</p>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="Smart Thermostat E"
+                  data-price="169"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/airbuds.avif"
+                class="card-img-top"
+                alt="Wireless Earbuds"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">AirBuds Lite</h5>
+                  <p class="card-text">
+                    True wireless earbuds with long battery life and great
+                    sound.
+                  </p>
+                  <p class="price">$89</p>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="AirBuds Lite"
+                  data-price="89"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/roboclean.avif"
+                class="card-img-top"
+                alt="Robot Vacuum"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">RoboClean X5</h5>
+                  <p class="card-text">
+                    Smart robot vacuum with mapping technology for efficient
+                    cleaning.
+                  </p>
+                  <p class="price">$299</p>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="RoboClean X5"
+                  data-price="299"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/homehub.avif"
+                class="card-img-top"
+                alt="Smart Display"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">Home Hub Display</h5>
+                  <p class="card-text">
+                    Control your smart home, watch videos, and more.
+                  </p>
+                  <p class="price">$129</p>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="Home Hub Display"
+                  data-price="129"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/pock projector.avif"
+                class="card-img-top"
+                alt="Projector"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">Pocket Projector</h5>
+                  <p class="card-text">
+                    Portable mini projector for movies on the go.
+                  </p>
+                  <p class="price">$249</p>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="Pocket Projector"
+                  data-price="249"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/fittrack band5.avif"
+                class="card-img-top"
+                alt="Fitness Tracker"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">FitTrack Band 5</h5>
+                  <p class="card-text">
+                    Monitor your activity, sleep, and heart rate 24/7.
+                  </p>
+                  <p class="price">$39</p>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="FitTrack Band 5"
+                  data-price="39"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/action cam.avif"
+                class="card-img-top"
+                alt="Action Camera"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">ActionCam Go</h5>
+                  <p class="card-text">
+                    Rugged and waterproof action camera for adventures.
+                  </p>
+                  <p class="price">$279</p>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="ActionCam Go"
+                  data-price="279"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 d-flex">
+            <div class="product-card w-100">
+              <img
+                src="images/smart lock.avif"
+                class="card-img-top"
+                alt="Smart Lock"
+              />
+              <div class="card-body">
+                <div>
+                  <h5 class="card-title">Secure Smart Lock</h5>
+                  <p class="card-text">
+                    Keyless entry and remote access control for your home.
+                  </p>
+                  <p class="price">$199</p>
+                </div>
+                <a
+                  href="#"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="Secure Smart Lock"
+                  data-price="199"
+                  >Buy Now</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="categories" class="section-padding">
+      <div class="container">
+        <h2 class="section-heading">Shop by Category</h2>
+        <div class="row g-4">
+          <div class="col-lg-2 col-md-4 col-6 d-flex">
+            <div class="category-card w-100">
+              <a href="phones.html">
+                <i class="fas fa-mobile-alt"></i>
+                <h5>Mobile Phones</h5>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6 d-flex">
+            <div class="category-card w-100">
+              <a href="laptops.html">
+                <i class="fas fa-laptop"></i>
+                <h5>Laptops</h5>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6 d-flex">
+            <div class="category-card w-100">
+              <a href="audio.html">
+                <i class="fas fa-headphones"></i>
+                <h5>Audio</h5>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6 d-flex">
+            <div class="category-card w-100">
+              <a href="wearables.html">
+                <i class="fas fa-stopwatch"></i>
+                <h5>Wearables</h5>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6 d-flex">
+            <div class="category-card w-100">
+              <a href="accessories.html">
+                <i class="fas fa-keyboard"></i>
+                <h5>Accessories</h5>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6 d-flex">
+            <div class="category-card w-100">
+              <a href="#">
+                <i class="fas fa-home"></i>
+                <h5>Smart Home</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <img src="images/aboutt.avif" alt="About Top Tech" />
+          </div>
+          <div class="col-lg-6">
+            <h2 class="section-heading text-start">About Top Tech</h2>
+            <style>
+              #about .section-heading::after {
+                left: 0;
+                transform: translateX(0);
+              }
+            </style>
+            <p>
+              Top Tech was founded with a passion for technology and a mission
+              to bring the latest electronic innovations directly to you. We
+              believe in quality, affordability, and exceptional customer
+              service.
+            </p>
+            <p>
+              Our curated selection features top brands and cutting-edge
+              gadgets, ensuring you always have access to the best tech on the
+              market. We're more than just a retailer; we're your trusted
+              partner in the world of electronics.
+            </p>
+            <a href="#" class="btn btn-primary mt-3">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section-padding">
+      <div class="container">
+        <h2 class="section-heading">What Our Customers Say</h2>
+        <div class="testimonial-slider">
+          <div class="slider-content"></div>
+          <div class="slider-controls">
+            <button id="prevBtn" aria-label="Previous Testimonial">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="nextBtn" aria-label="Next Testimonial">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+            <h5 style="color: var(--primary-color)">
+              <i class="fas fa-bolt"></i> Top Tech
+            </h5>
+            <p>
+              Your one-stop shop for the latest electronics and gadgets. Quality
+              products, great prices.
+            </p>
+            <p>
+              <i class="fas fa-map-marker-alt me-2"></i>45 Kofi Annan St, Accra,
+              Ghana. Digital Address: GA1184349 Street Address: 45 Kofi Annan
+              St, Accra, Ghana Cordinates: 5.613413,-0.186671.
+            </p>
+            <p><i class="fas fa-phone me-2"></i>+233 20-741-5469</p>
+            <p><i class="fas fa-envelope me-2"></i>realtymah31@gmail.com</p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+            <h5>Quick Links</h5>
+            <ul>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="#categories">Categories</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="privavy&policy.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+            <h5>Categories</h5>
+            <ul>
+              <li><a href="phones.html">Mobile Phones</a></li>
+              <li><a href="laptops.html">Laptops</a></li>
+              <li><a href="wearables.html">Smartwatches</a></li>
+              <li><a href="audio.html">Audio Devices</a></li>
+              <li><a href="#">Accessories</a></li>
+              <li><a href="#">Smart Home</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+            <h5>Follow Us</h5>
+            <div class="social-icons">
+              <a href="#" aria-label="Facebook"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="Twitter"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" aria-label="Youtube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © <span id="currentYear"></span> Top Tech. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+    <script>
+      // Redirect if not logged in
+      if (localStorage.getItem("isLoggedIn") !== "true") {
+        alert("You must log in or sign up first.");
+        window.location.href = "login.html";
+      }
+    </script>
+    <script>
+      // Set current year in footer
+      document.getElementById("currentYear").textContent =
+        new Date().getFullYear();
+    </script>
+  </body>
+</html>
