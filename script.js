@@ -22,39 +22,106 @@ function updateCartCount() {
 }
 
 // Show toast notification
-function showToast() {
+function saveCart() {
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+function addToCart(name, price) {
+  const existing = cart.find((i) => i.name === name);
+  if (existing) {
+    existing.quantity += 1;
+  } else {
+    cart.push({ name, price, quantity: 1 });
+  }
+  saveCart();
+  updateCartCount();
+  showToast('Product added to cart');
+}
+
+function loadCartItems() {
+  const container = document.getElementById('cart-items');
+  const totalEl = document.getElementById('cart-total');
+  if (!container) return;
+  container.innerHTML = '';
+  if (cart.length === 0) {
+    container.innerHTML = '<p>Your cart is empty.</p>';
+    if (totalEl) totalEl.textContent = '0';
+    return;
+  }
+  cart.forEach((item, idx) => {
+    const row = document.createElement('div');
+    row.className = 'row cart-item align-items-center mb-3';
+    row.innerHTML = `
+      <div class="col-md-5">${item.name}</div>
+      <div class="col-md-2">$${item.price}</div>
+      <div class="col-md-3 d-flex align-items-center">
+        <button class="btn btn-sm btn-outline-secondary quantity-btn" data-action="decrease" data-index="${idx}">-</button>
+        <span class="mx-2">${item.quantity}</span>
+        <button class="btn btn-sm btn-outline-secondary quantity-btn" data-action="increase" data-index="${idx}">+</button>
+      </div>
+      <div class="col-md-2">$${(item.price * item.quantity).toFixed(2)}</div>`;
+    container.appendChild(row);
+  });
+  const total = cart.reduce((sum, i) => sum + i.price * i.quantity, 0);
+  if (totalEl) totalEl.textContent = total.toFixed(2);
+}
+
+function handleQuantityClick(e) {
+  if (!e.target.classList.contains('quantity-btn')) return;
+  const idx = parseInt(e.target.dataset.index, 10);
+  const action = e.target.dataset.action;
+  if (action === 'increase') {
+    cart[idx].quantity += 1;
+  } else if (action === 'decrease') {
+    cart[idx].quantity -= 1;
+    if (cart[idx].quantity <= 0) {
+      cart.splice(idx, 1);
+    }
+  }
+  saveCart();
+  loadCartItems();
+  updateCartCount();
+}
+
+document.addEventListener('click', handleQuantityClick);
+
+function checkout() {
+  if (cart.length === 0) {
+    alert('Your cart is empty!');
+    return;
+  }
+  alert('Payment successful! Thank you for your purchase.');
+  cart = [];
+  saveCart();
+  loadCartItems();
+  updateCartCount();
+}
+function showToast(message) {
   const toastEl = document.getElementById("cartToast");
-  if (toastEl) {
+  if (toastEl && bootstrap && bootstrap.Toast) {
+    toastEl.querySelector(".toast-body")?.textContent = message;
     const toast = new bootstrap.Toast(toastEl);
     toast.show();
+  } else {
+    alert(message);
   }
 }
 
-// DOM Ready
-// document.addEventListener("DOMContentLoaded", () => {
-//   updateCartCount();
-
-//   const addToCartButtons = document.querySelectorAll(".add-to-cart");
-//   addToCartButtons.forEach((button) => {
-//     button.addEventListener("click", (e) => {
-//       e.preventDefault();
-
-//       const name = button.dataset.name;
-//       const price = parseFloat(button.dataset.price);
-
-//       const existingItem = cart.find((item) => item.name === name);
-//       if (existingItem) {
-//         existingItem.quantity += 1;
-//       } else {
-//         cart.push({ name, price, quantity: 1 });
-//       }
-
-//       localStorage.setItem("cart", JSON.stringify(cart));
-//       updateCartCount();
-//       showToast();
-//     });
-//   });
-// });
+document.addEventListener('DOMContentLoaded', () => {
+  updateCartCount();
+  const addToCartButtons = document.querySelectorAll('.add-to-cart');
+  addToCartButtons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const name = btn.dataset.name;
+      const price = parseFloat(btn.dataset.price);
+      addToCart(name, price);
+    });
+  });
+  loadCartItems();
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  if (checkoutBtn) checkoutBtn.addEventListener('click', checkout);
+});
 
 // --- Testimonial Slider ---
 const testimonials = [
