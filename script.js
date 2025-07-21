@@ -52,14 +52,17 @@ function loadCartItems() {
     const row = document.createElement('div');
     row.className = 'row cart-item align-items-center mb-3';
     row.innerHTML = `
-      <div class="col-md-5">${item.name}</div>
+      <div class="col-md-4">${item.name}</div>
       <div class="col-md-2">$${item.price}</div>
       <div class="col-md-3 d-flex align-items-center">
         <button class="btn btn-sm btn-outline-secondary quantity-btn" data-action="decrease" data-index="${idx}">-</button>
         <span class="mx-2">${item.quantity}</span>
         <button class="btn btn-sm btn-outline-secondary quantity-btn" data-action="increase" data-index="${idx}">+</button>
       </div>
-      <div class="col-md-2">$${(item.price * item.quantity).toFixed(2)}</div>`;
+      <div class="col-md-2">$${(item.price * item.quantity).toFixed(2)}</div>
+      <div class="col-md-1 text-end">
+        <button class="btn btn-sm btn-danger remove-btn" data-index="${idx}">&times;</button>
+      </div>`;
     container.appendChild(row);
   });
   const total = cart.reduce((sum, i) => sum + i.price * i.quantity, 0);
@@ -67,16 +70,22 @@ function loadCartItems() {
 }
 
 function handleQuantityClick(e) {
-  if (!e.target.classList.contains('quantity-btn')) return;
-  const idx = parseInt(e.target.dataset.index, 10);
-  const action = e.target.dataset.action;
-  if (action === 'increase') {
-    cart[idx].quantity += 1;
-  } else if (action === 'decrease') {
-    cart[idx].quantity -= 1;
-    if (cart[idx].quantity <= 0) {
-      cart.splice(idx, 1);
+  if (e.target.classList.contains('remove-btn')) {
+    const idx = parseInt(e.target.dataset.index, 10);
+    cart.splice(idx, 1);
+  } else if (e.target.classList.contains('quantity-btn')) {
+    const idx = parseInt(e.target.dataset.index, 10);
+    const action = e.target.dataset.action;
+    if (action === 'increase') {
+      cart[idx].quantity += 1;
+    } else if (action === 'decrease') {
+      cart[idx].quantity -= 1;
+      if (cart[idx].quantity <= 0) {
+        cart.splice(idx, 1);
+      }
     }
+  } else {
+    return;
   }
   saveCart();
   loadCartItems();
@@ -90,7 +99,7 @@ function checkout() {
     alert('Your cart is empty!');
     return;
   }
-  alert('Payment successful! Thank you for your purchase.');
+  alert('Order processed successfully!');
   cart = [];
   saveCart();
   loadCartItems();
@@ -109,15 +118,25 @@ function showToast(message) {
 
 document.addEventListener('DOMContentLoaded', () => {
   updateCartCount();
-  const addToCartButtons = document.querySelectorAll('.add-to-cart');
-  addToCartButtons.forEach((btn) => {
+
+  const productButtons = document.querySelectorAll('.product-card .btn-secondary');
+  productButtons.forEach((btn) => {
     btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const name = btn.dataset.name;
-      const price = parseFloat(btn.dataset.price);
-      addToCart(name, price);
+      const card = btn.closest('.product-card');
+      const name = btn.dataset.name || card?.querySelector('.card-title')?.textContent;
+      const priceText = btn.dataset.price || card?.querySelector('.price')?.textContent;
+      const price = parseFloat(String(priceText).replace(/[^0-9.]/g, ''));
+      if (name && !isNaN(price)) {
+        e.preventDefault();
+        addToCart(name, price);
+        const href = btn.getAttribute('href');
+        if (href && href !== '#' && !href.startsWith('javascript')) {
+          window.location.href = href;
+        }
+      }
     });
   });
+
   loadCartItems();
   const checkoutBtn = document.getElementById('checkoutBtn');
   if (checkoutBtn) checkoutBtn.addEventListener('click', checkout);
