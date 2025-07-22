@@ -130,9 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         addToCart(name, price);
         const href = btn.getAttribute('href');
-        if (href && href !== '#' && !href.startsWith('javascript')) {
-          window.location.href = href;
-        }
       }
     });
   });
