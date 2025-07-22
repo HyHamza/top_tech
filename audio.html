@@ -29,9 +29,31 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div
+      class="toast-container position-fixed top-0 end-0 p-3"
+      style="z-index: 9999"
+    >
+      <div
+        id="cartToast"
+        class="toast align-items-center text-bg-success border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body">Product added to cart successfully!</div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="login.html">
+        <a class="navbar-brand" href="home.html">
           <i class="fas fa-bolt"></i> Top Tech
         </a>
         <button
@@ -48,27 +70,27 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="home.html"
+              <a class="nav-link" aria-current="page" href="home.html"
                 >Home</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#products">Products</a>
+              <a class="nav-link" href="home.html#products">Products</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="categories.html">Categories</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
+              <a class="nav-link" href="home.html#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#testimonials">Testimonials</a>
+              <a class="nav-link" href="home.html#testimonials">Testimonials</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#footer">Contact</a>
             </li>
             <li class="nav-item ms-lg-3">
-              <a class="btn btn-primary" href="#products">Shop Now</a>
+              <a class="btn btn-primary" href="home.html#products">Shop Now</a>
             </li>
             <li class="nav-item ms-lg-3 position-relative">
               <a
@@ -122,8 +144,8 @@
                 <a
                   href="javascript:void(0)"
                   class="btn btn-secondary mt-auto add-to-cart"
-                  data-name="Portable Bluetooth Speaker"
-                  data-price="45"
+                  data-name="Z Headphones"
+                  data-price="69"
                 >
                   Add to Cart
                 </a>
@@ -149,8 +171,8 @@
                 <a
                   href="javascript:void(0)"
                   class="btn btn-secondary mt-auto add-to-cart"
-                  data-name="Portable Bluetooth Speaker"
-                  data-price="45"
+                  data-name="Air Pods"
+                  data-price="19"
                 >
                   Add to Cart
                 </a>
@@ -176,8 +198,8 @@
                 <a
                   href="javascript:void(0)"
                   class="btn btn-secondary mt-auto add-to-cart"
-                  data-name="Portable Bluetooth Speaker"
-                  data-price="45"
+                  data-name="Wireless Speaker"
+                  data-price="99"
                 >
                   Add to Cart
                 </a>
@@ -203,8 +225,8 @@
                 <a
                   href="javascript:void(0)"
                   class="btn btn-secondary mt-auto add-to-cart"
-                  data-name="Portable Bluetooth Speaker"
-                  data-price="45"
+                  data-name="Premium Headphones"
+                  data-price="99"
                 >
                   Add to Cart
                 </a>
@@ -229,7 +251,7 @@
                 <a
                   href="javascript:void(0)"
                   class="btn btn-secondary mt-auto add-to-cart"
-                  data-name="Portable Bluetooth Speaker"
+                  data-name="Bluetooth Soundbar"
                   data-price="45"
                 >
                   Add to Cart
@@ -256,8 +278,8 @@
                 <a
                   href="javascript:void(0)"
                   class="btn btn-secondary mt-auto add-to-cart"
-                  data-name="Portable Bluetooth Speaker"
-                  data-price="45"
+                  data-name="2in1 Headphone & Mobile"
+                  data-price="37"
                 >
                   Add to Cart
                 </a>
@@ -283,8 +305,8 @@
                 <a
                   href="javascript:void(0)"
                   class="btn btn-secondary mt-auto add-to-cart"
-                  data-name="Portable Bluetooth Speaker"
-                  data-price="45"
+                  data-name="AirPod Pro"
+                  data-price="19"
                 >
                   Add to Cart
                 </a>
@@ -305,8 +327,8 @@
                 <a
                   href="javascript:void(0)"
                   class="btn btn-secondary mt-auto add-to-cart"
-                  data-name="Portable Bluetooth Speaker"
-                  data-price="45"
+                  data-name="BT Speaker"
+                  data-price="1499"
                 >
                   Add to Cart
                 </a>
@@ -331,8 +353,8 @@
                 <a
                   href="javascript:void(0)"
                   class="btn btn-secondary mt-auto add-to-cart"
-                  data-name="Portable Bluetooth Speaker"
-                  data-price="45"
+                  data-name="Pro BT Speaker"
+                  data-price="99"
                 >
                   Add to Cart
                 </a>
@@ -357,8 +379,8 @@
                 <a
                   href="javascript:void(0)"
                   class="btn btn-secondary mt-auto add-to-cart"
-                  data-name="Portable Bluetooth Speaker"
-                  data-price="45"
+                  data-name="Alexa Pro"
+                  data-price="55"
                 >
                   Add to Cart
                 </a>
@@ -383,8 +405,8 @@
                 <a
                   href="javascript:void(0)"
                   class="btn btn-secondary mt-auto add-to-cart"
-                  data-name="Portable Bluetooth Speaker"
-                  data-price="45"
+                  data-name="Headset"
+                  data-price="1499"
                 >
                   Add to Cart
                 </a>

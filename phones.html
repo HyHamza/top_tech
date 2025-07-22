@@ -29,6 +29,28 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div
+      class="toast-container position-fixed top-0 end-0 p-3"
+      style="z-index: 9999"
+    >
+      <div
+        id="cartToast"
+        class="toast align-items-center text-bg-success border-0"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="d-flex">
+          <div class="toast-body">Product added to cart successfully!</div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+    </div>
     <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
       <div class="container">
         <a class="navbar-brand" href="home.html">
@@ -48,27 +70,27 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="home.html"
+              <a class="nav-link" aria-current="page" href="home.html"
                 >Home</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#products">Products</a>
+              <a class="nav-link" href="home.html#products">Products</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="categories.html">Categories</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
+              <a class="nav-link" href="home.html#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#testimonials">Testimonials</a>
+              <a class="nav-link" href="home.html#testimonials">Testimonials</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#footer">Contact</a>
             </li>
             <li class="nav-item ms-lg-3">
-              <a class="btn btn-primary" href="#products">Shop Now</a>
+              <a class="btn btn-primary" href="home.html#products">Shop Now</a>
             </li>
             <li class="nav-item ms-lg-3 position-relative">
               <a
@@ -121,9 +143,9 @@
                 </div>
                 <a
                   href="#"
-                  class="btn btn-secondary mt-auto ; add-to-cart"
-                  data-product="iphone14"
-                  data-price="999.00"
+                  class="btn btn-secondary mt-auto add-to-cart"
+                  data-name="iPhone 14"
+                  data-price="999"
                   >Add to Cart</a
                 >
               </div>
@@ -145,7 +167,7 @@
                   </p>
                   <p class="price">$999</p>
                 </div>
-                <a href="#" class="btn btn-secondary mt-auto">Add to Cart</a>
+                <a href="#" class="btn btn-secondary mt-auto add-to-cart" data-name="iPhone 14 Pro Max" data-price="999">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -165,7 +187,7 @@
                   </p>
                   <p class="price">$999</p>
                 </div>
-                <a href="#" class="btn btn-secondary mt-auto">Add to Cart</a>
+                <a href="#" class="btn btn-secondary mt-auto add-to-cart" data-name="iPhone 14 Pro" data-price="999">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -185,7 +207,7 @@
                   </p>
                   <p class="price">$999</p>
                 </div>
-                <a href="#" class="btn btn-secondary mt-auto">Add to Cart</a>
+                <a href="#" class="btn btn-secondary mt-auto add-to-cart" data-name="iPhone 15" data-price="999">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -205,7 +227,7 @@
                   </p>
                   <p class="price">$999</p>
                 </div>
-                <a href="#" class="btn btn-secondary mt-auto">Add to Cart</a>
+                <a href="#" class="btn btn-secondary mt-auto add-to-cart" data-name="iPhone 11" data-price="999">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -225,7 +247,7 @@
                   </p>
                   <p class="price">$999</p>
                 </div>
-                <a href="#" class="btn btn-secondary mt-auto">Add to Cart</a>
+                <a href="#" class="btn btn-secondary mt-auto add-to-cart" data-name="iPhone 13" data-price="999">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -245,7 +267,7 @@
                   </p>
                   <p class="price">$999</p>
                 </div>
-                <a href="#" class="btn btn-secondary mt-auto">Add to Cart</a>
+                <a href="#" class="btn btn-secondary mt-auto add-to-cart" data-name="iPhone X" data-price="999">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -261,7 +283,7 @@
                   </p>
                   <p class="price">$999</p>
                 </div>
-                <a href="#" class="btn btn-secondary mt-auto">Add to Cart</a>
+                <a href="#" class="btn btn-secondary mt-auto add-to-cart" data-name="iPhone XR" data-price="999">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -281,7 +303,7 @@
                   </p>
                   <p class="price">$999</p>
                 </div>
-                <a href="#" class="btn btn-secondary mt-auto">Add to Cart</a>
+                <a href="#" class="btn btn-secondary mt-auto add-to-cart" data-name="iPhone XS Max" data-price="999">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -300,7 +322,7 @@
                   </p>
                   <p class="price">$999</p>
                 </div>
-                <a href="#" class="btn btn-secondary mt-auto">Add to Cart</a>
+                <a href="#" class="btn btn-secondary mt-auto add-to-cart" data-name="Tablet Air" data-price="999">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -321,7 +343,7 @@
                   </p>
                   <p class="price">$999</p>
                 </div>
-                <a href="#" class="btn btn-secondary mt-auto">Add to Cart</a>
+                <a href="#" class="btn btn-secondary mt-auto add-to-cart" data-name="Galaxy S24 Ultra" data-price="999">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -342,7 +364,7 @@
                   </p>
                   <p class="price">$999</p>
                 </div>
-                <a href="#" class="btn btn-secondary mt-auto">Add to Cart</a>
+                <a href="#" class="btn btn-secondary mt-auto add-to-cart" data-name="Google Pixel 9" data-price="999">Add to Cart</a>
               </div>
             </div>
           </div>
