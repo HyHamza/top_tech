@@ -127,9 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const priceText = btn.dataset.price || card?.querySelector('.price')?.textContent;
       const price = parseFloat(String(priceText).replace(/[^0-9.]/g, ''));
       if (name && !isNaN(price)) {
-        e.preventDefault();
         addToCart(name, price);
-        const href = btn.getAttribute('href');
       }
     });
   });
