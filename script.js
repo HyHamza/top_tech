@@ -27,6 +27,7 @@ function saveCart() {
 }
 
 function addToCart(name, price) {
+  console.log('Adding to cart:', name, price);
   const existing = cart.find((i) => i.name === name);
   if (existing) {
     existing.quantity += 1;
@@ -116,25 +117,26 @@ function showToast(message) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
   updateCartCount();
 
-  const productButtons = document.querySelectorAll('.product-card .btn-secondary');
-  productButtons.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      const card = btn.closest('.product-card');
-      const name = btn.dataset.name || card?.querySelector('.card-title')?.textContent;
-      const priceText = btn.dataset.price || card?.querySelector('.price')?.textContent;
-      const price = parseFloat(String(priceText).replace(/[^0-9.]/g, ''));
-      if (name && !isNaN(price)) {
-        addToCart(name, price);
-      }
+  const productButtons = document.querySelectorAll('.add-to-cart');
+  for (let i = 0; i < productButtons.length; i++) {
+    productButtons[i].addEventListener('click', function(event) {
+      event.preventDefault();
+      const name = productButtons[i].getAttribute('data-name');
+      const price = parseFloat(productButtons[i].getAttribute('data-price'));
+      console.log('Button clicked:', name, price);
+      addToCart(name, price);
     });
-  });
+  }
+
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', checkout);
+  }
 
   loadCartItems();
-  const checkoutBtn = document.getElementById('checkoutBtn');
-  if (checkoutBtn) checkoutBtn.addEventListener('click', checkout);
 });
 
 // --- Testimonial Slider ---
